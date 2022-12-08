@@ -118,11 +118,12 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_below="@id/choices1"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/blue"
+        android:layout_centerHorizontal="true"
         android:text="Submit"/>
 
 

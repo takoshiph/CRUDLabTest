@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Contact your Admin.", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
     }
