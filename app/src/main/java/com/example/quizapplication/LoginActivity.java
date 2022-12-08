@@ -12,11 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private final static int NUMBER_RETRY = 3;
     Button registerBtn, loginBtn;
     EditText usernameET, passwordET;
-    String receivedUser, receivedPass, inputUser,inputPass;
-    Integer lockedAccountCounter;
+    String receivedUser, receivedPass, inputUser, inputPass;
+    static int lockedAccountCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +41,23 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("RegisterPreferences", Context.MODE_PRIVATE);
                 receivedUser = sharedPreferences.getString("Name", null);
-                receivedPass = sharedPreferences.getString("Password",null);
+                receivedPass = sharedPreferences.getString("Password", null);
                 inputUser = usernameET.getText().toString();
                 inputPass = passwordET.getText().toString();
 
-                if (usernameET.getText().toString().isEmpty() || passwordET.getText().toString().isEmpty()){
-                    Toast.makeText(LoginActivity.this, "Details cannot be blank", Toast.LENGTH_SHORT).show();;
-                } else if (usernameET.getText().toString().equals(receivedUser) && passwordET.getText().toString().equals(receivedPass)){
+                if (usernameET.getText().toString().isEmpty() || passwordET.getText().toString().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Details cannot be blank", Toast.LENGTH_SHORT).show();
+                    ;
+                } else if (usernameET.getText().toString().equals(receivedUser) && passwordET.getText().toString().equals(receivedPass)) {
                     Intent goToQuestions = new Intent(LoginActivity.this, QuestionActivity.class);
                     startActivity(goToQuestions);
-                } else if(!inputUser.equals(receivedUser) || !inputPass.equals(receivedPass)) {
+                } else if (!inputUser.equals(receivedUser) || !inputPass.equals(receivedPass)) {
                     Toast.makeText(LoginActivity.this, "Incorrect credentials.", Toast.LENGTH_SHORT).show();
                     lockedAccountCounter++;
-                    if(lockedAccountCounter == 3){
+                    if (lockedAccountCounter == NUMBER_RETRY) {
                         loginBtn.setEnabled(false);
+                        loginBtn.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+                        loginBtn.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
                         Toast.makeText(LoginActivity.this, "Contact your Admin.", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -62,5 +65,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 }
