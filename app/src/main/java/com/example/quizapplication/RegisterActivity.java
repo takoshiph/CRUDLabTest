@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
                 editor.commit();
 
                 Toast.makeText(RegisterActivity.this, "Username registered.", Toast.LENGTH_SHORT).show();
-
             }
         });
 

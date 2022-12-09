@@ -1,40 +1,6 @@
 package com.example.quizapplication;
 
 import java.util.ArrayList;
-/*
-public class QuestionAnswer {
-
-    public static String question[] = {
-            "Which company owns Android?",
-            "Which one is not a programming language?",
-            "Who is the owner of Tesla?",
-            "Who owns Apple?",
-            "Which of the following is a web browser?",
-            "What was the name of first operating system?",
-            "Where was the world wide web invented?",
-            "Which institution is credited with creating the first website?",
-            "When was the first email sent?",
-            "Do you think you will pass this semester?"
-    };
-    public static String[][] answers = {
-            {"Google","Apple", "Nokia","Samsung"},
-            {"Java","Kotlin","Cobra","Python"},
-            {"Ranchodas","P.Duterte","Melon Mask","Elon Musk"},
-            {"Snow White","Vanguard Grp","Tim Cook","Steve Knob"},
-            {"Spider web","King Bowser","Sa Pari","Firefox"},
-            {"GM-NAA I/O","GYM KA NA","EPOC","JIYOO I/O"},
-            {"United States","Switzerland","Germany","United Kingdom"},
-            {"United Nations","NASA","CERN","NATO"},
-            {"1982","1971","1992","1971"},
-            {"Yes","No","Maybe","Don't care."}
-    };
-    public static String correctAnswers[] = {
-            "Google","Cobra","Elon Musk","Vanguard Grp",
-            "Google Chrome","GM-NAA I/O","Switzerland",
-            "CERN","1971","Yes"
-    };
-}
-*/
 
 public class QuestionAnswer {
     private String question;
